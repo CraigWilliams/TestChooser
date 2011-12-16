@@ -6,7 +6,7 @@ import sublime, sublime_plugin, io
 class TestChooserCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
-		search_terms = set(['it', 'describe', 'context', 'scenario'])
+		search_terms = set(['it', 'describe', 'context', 'Scenario'])
 		self.last_choice_path = self.ensure_last_choice_path()
 
 		self.filepath = self.view.file_name()
@@ -49,10 +49,10 @@ class TestChooserCommand(sublime_plugin.TextCommand):
 
 	def format_line(self, line):
 		if line == "Run'em All":
-			return "bundle exec %s --drb %s" % (self.filetype, self.filepath)
+			return "bundle exec %s %s --drb" % (self.filetype, self.filepath)
 		else:
-			[line_num, text] = line.split(":")
-			return "bundle exec %s --drb %s:%s" % (self.filetype, self.filepath, line_num)
+			items = line.split(":")
+			return "bundle exec %s %s:%s --drb" % (self.filetype, self.filepath, items[0])
 
 	def execute_cmd(self, cmd):
 		app(u'iTerm.app').terminals[1].current_session.write(text=cmd)
