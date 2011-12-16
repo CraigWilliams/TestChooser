@@ -28,7 +28,7 @@ Add this line to the User key bindings file. Change the key bindings to your lik
 
 This one uses a two-key combination. The "super" is the "command" key on a Mac.
 
-`{ "keys": ["super+t", "super+y"], "command": "test_chooser" }`
+`{ "keys": ["super+y", "super+y"], "command": "test_chooser" }`
 
 ## ToDo
 Make this a full package plugin.
