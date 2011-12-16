@@ -6,11 +6,10 @@ import sublime, sublime_plugin, io
 class TestChooserCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
-		search_terms = set(['it', 'describe', 'context', 'Scenario'])
+		search_terms 					= set(['it', 'describe', 'context', 'Scenario'])
+		self.filepath 				= self.view.file_name()
+		self.filetype 				= self.set_file_type()
 		self.last_choice_path = self.ensure_last_choice_path()
-
-		self.filepath = self.view.file_name()
-		self.filetype = self.set_file_type()
 
 		if self.filetype == 'unknown':
 			self.exit_with_alert()
@@ -72,10 +71,15 @@ class TestChooserCommand(sublime_plugin.TextCommand):
 		return io.open(self.last_choice_path, 'r').readline()
 
 	def set_last_choice(self, choice):
-		io.open(self.last_choice_path, 'w').write(choice)
+		f = open(self.last_choice_path, 'w')
+		f.write(choice)
+		f.close()
 
 	def ensure_last_choice_path(self):
-		path = os.path.join(os.getcwd(), 'last_choice.txt')
+		path = self.plugin_file('last_choice.txt')
 		if not os.path.exists(path):
 			open(path, 'w').close()
 		return path
+
+	def plugin_file(self, name):
+	  return os.path.join(sublime.packages_path(), 'User', name)
