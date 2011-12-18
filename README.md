@@ -1,6 +1,8 @@
 #TestChooser
 A Sublime Text 2 plugin for quickly executing an RSpec command in [iTerm](http://iterm.sourceforge.net/).
 
+Since this plugin uses py-appscript, an AppleScript bridge for Python, it is only usable on OS X.
+
 ## What It Does
 It first checks the current file to see that it is either a "feature" or "spec" file. If so, it read the file looking for "it", "describe", "context" or "scenario" keywords that are at the beginning of a line.
 
