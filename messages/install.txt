@@ -1,0 +1,16 @@
+** If this is the first time you are installing TestChooser. **
+
+*****************************
+Install py-appscript
+*****************************
+
+Sublime Text 2 uses its own Python and its version is 2.6.
+We need to install appscript with the same version that Sublime is using.
+
+`sudo easy_install-2.6 appscript`
+
+This will create "appscript-1.0.0-py2.6-macosx-10.7-intel.egg" file in /Library/Python/2.6/site-packages
+
+In Sublime, choose "Preferences"->"Browse Packages"
+
+Copy the .egg file into the "Installed Packages" folder and restart Sublime.
