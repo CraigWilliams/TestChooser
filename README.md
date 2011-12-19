@@ -49,3 +49,5 @@ Read the license text file included in this package... but it's MIT.
 ## Changelog
 
 Changed the original plugin to now use [Package Conrol](http://wbond.net/sublime_packages/package_control)
+
+Removed py-appscript dependency.
