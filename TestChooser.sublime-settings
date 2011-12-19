@@ -5,5 +5,8 @@
   // These are the search terms TestChooser will use when searching
   // the RSpec or Cucumber file. Only terms listed here will show
   // up in the choice list.
-  "search_terms": ["it", "describe", "context", "Scenario"]
+  "search_terms": ["it", "describe", "context", "Scenario"],
+
+  "rspec_command": "bundle exec rspec --drb",
+  "cucumber_command": "bundle exec cucumber --drb -r features/"
 }
