@@ -1,3 +1,4 @@
 [
-  { "keys": ["super+y", "super+y"], "command": "test_chooser" }
+  { "keys": ["super+y", "super+y"], "command": "test_chooser" },
+  { "keys": ["super+y", "super+t"], "command": "run_this_test" }
 ]
