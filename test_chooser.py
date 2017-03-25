@@ -17,7 +17,7 @@ class TestChooserCommand(sublime_plugin.WindowCommand):
     else:
       line_number = 0
 
-      for line in io.open(self.filepath, 'r'):
+      for line in io.open(self.filepath, 'r', encoding="utf-8"):
         line_number += 1
         for word in search_terms:
           if line.strip().startswith(word):
